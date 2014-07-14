@@ -1,0 +1,25 @@
+<ivy-module version="2.0">
+    <info organisation="monmouth" module="tmapi-7.7-test" revision="1.0-SNAPSHOT" status="integration"/>
+    <configurations defaultconfmapping="build->default">
+        <conf name="build"/>
+    </configurations>
+
+    <dependencies>
+        <!-- tm-soap-api-client-->
+        <dependency org="monmouth" name="tm-soap-api" rev="7.7-SNAPSHOT"/>
+        <!--  axis2 -->
+        <dependency org="org.apache.axis2" name="axis2-kernel" rev="1.6.2"/>
+        <dependency org="org.apache.axis2" name="axis2-adb" rev="1.6.2"/>
+        <dependency org="org.apache.axis2" name="axis2-xmlbeans" rev="1.6.2"/>
+        <dependency org="org.apache.axis2" name="axis2-jaxws" rev="1.6.2"/>
+        <dependency org="org.apache.axis2" name="axis2-transport-http" rev="1.6.2"/>
+        <dependency org="org.apache.axis2" name="axis2-transport-local" rev="1.6.2"/>
+        <dependency org="commons-io" name="commons-io" rev="2.4"/>
+        <!-- Apache Log4j 1.2 -->
+        <dependency org="log4j" name="log4j" rev="1.2.17"/>
+        <!--  Commons Lang, a package of Java utility classes for the classes
+         that are in java.lang's hierarchy, or are considered to be so standard
+         as to justify existence in java.lang. -->
+        <dependency org="commons-lang" name="commons-lang" rev="2.6"/>
+    </dependencies>
+</ivy-module>
