@@ -129,10 +129,14 @@ public class ProjectAPIDemo {
         ProjectAPIDemo mytest = new ProjectAPIDemo();
         ProjectBaseBean[] projects = mytest.getAllProjects();
 
-        mytest.printMessage("Print out all projects");
-        for (ProjectBaseBean project : projects) {
-            System.out.println(String.format("Project Name: %s - Owner: %s",
+        if (projects == null || projects.length == 0) {
+            mytest.printMessage("There is no project");  
+        } else {
+            mytest.printMessage("Print out all projects");
+            for (ProjectBaseBean project : projects) {
+                System.out.println(String.format("Project Name: %s - Owner: %s",
                     project.getProjName(), project.getProjOwnerID()));
+            }
         }
         
         mytest.printMessage("Create a new project");
