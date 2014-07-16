@@ -1,6 +1,5 @@
 <project xmlns:ivy="antlib:org.apache.ivy.ant"
         name="tm-soap-api-demo" default="compile" basedir=".">
-
     <!-- ==============================
         Properties
     ============================== -->
@@ -8,6 +7,8 @@
     <property name="build.dir" location="classes" description="binary java classes folder"/>
     <property name="java.source.version" value="1.7"/>
     <property name="java.target.version" value="1.7"/>
+
+    <ivy:settings file="ivysettings.xml" />
 
     <path id="compile.classpath"/>
 
@@ -27,6 +28,7 @@
     <target name="compile" depends="init,resolve" description="Compile source">
         <javac srcdir="${src.dir}" destdir="${build.dir}"
                 includeantruntime="false" debug="true" debuglevel="lines,source"
+                encoding="utf-8"
                 source="${java.source.version}"
                 target="${java.target.version}">
             <classpath refid="compile.classpath"/>
