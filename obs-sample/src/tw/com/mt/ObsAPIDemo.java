@@ -179,6 +179,11 @@ public class ObsAPIDemo {
                 );
     }
 
+    private UserBaseBean[] findDirectManagers(int userKey) {
+        return ObsServiceClient.findDirectManagers(userKey);
+    }
+    
+
     private void printMessage(String message) {
         System.out.println("");
         System.out.println(seperateLine);
@@ -230,5 +235,14 @@ public class ObsAPIDemo {
         UserBaseBean user = mytest.getEmployee(mytest.userId);
         System.out.println(String.format("User: %s(%s)",
                 user.getUserName(), user.getUserID()));
+
+        mytest.printMessage("Find direct manager(s) for user(133)");
+        UserBaseBean[] managers = mytest.findDirectManagers(133);
+        if (managers != null && managers.length > 0) {
+            System.out.println(String.format("%d direct managers have been found", managers.length));
+            System.out.println("the first direct manager is " + managers[0].getUserName());
+        } else {
+            System.out.println("No direct managers found");
+        }
     }
 }
