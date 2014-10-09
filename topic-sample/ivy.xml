@@ -6,7 +6,7 @@
 
     <dependencies>
         <!-- tm-soap-api-client-->
-        <dependency org="monmouth" name="tm-soap-api" rev="7.7-SNAPSHOT"/>
+        <dependency org="monmouth" name="tm-soap-api" rev="7.7"/>
         <!--  axis2 -->
         <dependency org="org.apache.axis2" name="axis2-kernel" rev="1.6.2"/>
         <dependency org="org.apache.axis2" name="axis2-adb" rev="1.6.2"/>
