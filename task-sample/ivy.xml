@@ -1,12 +1,12 @@
 <ivy-module version="2.0">
-    <info organisation="monmouth" module="tmapi-7.7-test" revision="1.0-SNAPSHOT" status="integration"/>
+    <info organisation="monmouth" module="tm-soap-api-2.0-test" revision="1.0-SNAPSHOT" status="integration"/>
     <configurations defaultconfmapping="build->default">
         <conf name="build"/>
     </configurations>
 
     <dependencies>
         <!-- tm-soap-api-client-->
-        <dependency org="monmouth" name="tm-soap-api" rev="7.7"/>
+        <dependency org="monmouth" name="tm-soap-api" rev="2.0-SNAPSHOT" />
         <!--  axis2 -->
         <dependency org="org.apache.axis2" name="axis2-kernel" rev="1.6.2"/>
         <dependency org="org.apache.axis2" name="axis2-adb" rev="1.6.2"/>

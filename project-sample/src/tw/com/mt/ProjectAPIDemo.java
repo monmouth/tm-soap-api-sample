@@ -13,7 +13,9 @@
  */
 package tw.com.mt;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.GregorianCalendar;
 
 import tw.com.mt.util.ProjectServiceClient;
 
@@ -47,20 +49,15 @@ public class ProjectAPIDemo {
      * Create a new project.
      */
     private int createProject() {
-        Calendar cal = Calendar.getInstance();
+        Calendar cal = GregorianCalendar.getInstance();
         String projectID = "Test-" + cal.getTimeInMillis();
-        StringBuilder beginDateBuilder = new StringBuilder(cal.get(Calendar.YEAR));
-        beginDateBuilder.append(cal.get(Calendar.MONTH) + 1);
-        beginDateBuilder.append(cal.get(Calendar.DATE));
-        
+        String beginDateString = new SimpleDateFormat("yyyyMMdd").format(cal.getTime());
         cal.add(Calendar.MONTH, 3);
-        StringBuilder endDateBuilder = new StringBuilder(cal.get(Calendar.YEAR));
-        endDateBuilder.append(cal.get(Calendar.MONTH) + 1);
-        endDateBuilder.append(cal.get(Calendar.DATE));
+        String endDateString = new SimpleDateFormat("yyyyMMdd").format(cal.getTime());
         
-        int beginDate = Integer.parseInt(beginDateBuilder.toString());
-        int endDate = Integer.parseInt(endDateBuilder.toString());
-        
+        int beginDate = Integer.parseInt(beginDateString);
+        int endDate = Integer.parseInt(endDateString);
+
         return ProjectServiceClient.createProjectTM75(
                 "Test Project created by tm-soap-api",// projName-專案名稱
                 projectID, // projId-專案代號,不可重複
